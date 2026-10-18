@@ -1,11 +1,15 @@
 # Claude directory release
 
-Version 0.2.0 prepares personal OAuth through the fixed hosted Aixy MCP endpoint. Hosted OAuth is
-deployed. A dedicated review account has completed public documentation discovery and a read
-action through MCP Inspector, including authorization denial and revocation checks. This finite
-result does not establish Claude client acceptance. Do not merge, tag, release or submit 0.2.0
-until a complete Claude client connection and tool round-trip have been accepted; verify each
-additional client experience the listing will claim.
+Version 0.2.0 uses personal OAuth through the fixed hosted Aixy MCP endpoint. Hosted OAuth is
+deployed. A dedicated review account completed one bounded Claude chat remote-connector check:
+personal OAuth, connection listing, a dashboard connection link, discovery of one read-only action
+with its input schema, and one approved public documentation search. No retry or modifying action
+was used. The review authorization was revoked and the client disconnected after the test.
+MCP Inspector separately verified discovery, a read action, denial and revocation.
+This verifies the hosted connector in that Claude chat check. It did not exercise plugin
+installation or live use in Cowork or Claude Code. Review the final validated source and obtain
+explicit maintainer approval before merging, tagging, releasing or submitting. Verify each
+additional client experience before describing it as verified.
 
 The Aixy-owned marketplace is independent of Anthropic's curated directory and
 `claude-plugins-official`. A direct install does not establish a directory listing or approval.
@@ -15,7 +19,7 @@ The Aixy-owned marketplace is independent of Anthropic's curated directory and
 - Repository: `https://github.com/aixy-tech/aixy-claude-plugin`
 - Plugin path: `plugins/aixy`
 - Plugin name: `aixy`
-- Prepared version: `0.2.0`
+- Plugin version: `0.2.0`
 - Stable manual-token version: `v0.1.0`; preserve that tag and its contents.
 - Suggested submission source: a version tag after runtime acceptance and source review, with
   automatic publication disabled.
@@ -39,10 +43,16 @@ benchmark is needed for this configuration-only package.
 4. Verify denial, expired authorization, renewal and explicit revocation, including a revoked
    connection being rejected by Aixy.
 5. Record the deployed behavior and evidence before merging or creating the 0.2.0 release tag.
+6. Revoke review grants after the test and confirm cleanup before release. Keep credentials,
+   account identifiers, conversation URLs, private screenshots and deployment evidence out of
+   this public repository.
 
-The Inspector result verifies one discovery search, one exact schema lookup and one explicitly
-reviewed public documentation read. Package validation and isolated installation are also
-verified. Claude, Cowork and Claude Code client acceptance remain separate from those checks.
+The Claude chat result covers the remote connector's connection listing, dashboard link,
+on-demand discovery with a complete input schema, and one explicitly approved public documentation
+read. The Inspector result separately covers one discovery search, one exact schema lookup and one
+reviewed read, including denial and revocation checks. Package validation and isolated Claude Code
+installation are verified; live Claude Code and Cowork OAuth/tool round-trips are not. None of
+these checks establishes a directory approval or publication.
 
 After runtime acceptance and review, tag the validated source. In
 [Claude's developer portal](https://claude.ai/directory/manage), choose **Plugin bundle**, enter the
@@ -99,8 +109,9 @@ before acknowledging compliance or submitting. Upstream provider connections rem
 Claude's personal authorization to access Aixy.
 
 The fixed URL follows the remote connector structure used by Chat, Cowork and Claude Code.
-Compatibility of the source format and Inspector verification do not establish that any specific
-Claude client has completed sign-in and a tool round-trip. See the
+The finite Claude chat remote-connector check does not extend to plugin installation or to other
+clients. Source-format compatibility, Inspector verification and disposable Claude Code installation
+are separate evidence states. See the
 [platform support matrix](https://claude.com/docs/plugins/platform-support).
 
 ## Evidence states

@@ -4,10 +4,14 @@ Connect Claude to the external tools your organization makes available through A
 connection with your own account and permissions. Aixy discovers permitted tools on demand, and
 Claude controls when it asks you to approve external actions.
 
-**Version 0.2.0 is not released.** Hosted OAuth and a dedicated review account's public documentation
-search have been verified with MCP Inspector, including denial and revocation. A complete Claude
-client connection and tool round-trip remain pending before release or directory submission. The
-stable [v0.1.0 package](https://github.com/aixy-tech/aixy-claude-plugin/tree/v0.1.0/plugins/aixy)
+**Verified scope:** a dedicated review account completed a personal OAuth connection
+and one bounded public documentation read through Claude chat's remote connector. It listed
+connections, obtained a dashboard connection link, discovered one action with its input schema,
+and executed one approved read-only search, without retries or modifying actions. The review
+authorization was revoked and the client disconnected after the test. MCP Inspector separately
+verified discovery, a read action, denial and revocation. See
+[GitHub Releases](https://github.com/aixy-tech/aixy-claude-plugin/releases) for published versions. The
+retained [v0.1.0 package](https://github.com/aixy-tech/aixy-claude-plugin/tree/v0.1.0/plugins/aixy)
 continues to document the manual-token flow for Claude Code.
 
 ## Requirements
@@ -18,10 +22,12 @@ continues to document the manual-token flow for Claude Code.
 
 This package targets Aixy's hosted service at `https://api.aixy-gateway.com/mcp`. It contains no
 token configuration prompt. The fixed remote connection is intended for Chat, Cowork and Claude
-Code; each client experience needs verification before it is claimed as supported. See the
+Code. Claude chat remote-connector use is verified only within the finite check above; this did not
+exercise plugin installation. Claude Code package validation and disposable installation are
+verified, but live OAuth/tool use in Claude Code and Cowork are not. See the
 [Claude support matrix](https://claude.com/docs/plugins/platform-support).
 
-## Install and connect after activation
+## Install and connect
 
 In Claude Code, add the Aixy marketplace and install the plugin:
 
@@ -30,8 +36,7 @@ In Claude Code, add the Aixy marketplace and install the plugin:
 /plugin install aixy@aixy-plugins
 ```
 
-Until version 0.2.0 is merged and released, the default branch serves the stable manual-token
-version. After 0.2.0 is accepted and released:
+These instructions describe version 0.2.0. If you use v0.1.0, follow its manual-token setup instead.
 
 1. Select the intended organization in Aixy before starting the connection.
 2. Open `/mcp` in Claude Code and use Aixy's authentication action. In Chat or Cowork, connect

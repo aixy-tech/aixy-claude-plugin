@@ -1,38 +1,47 @@
 # Aixy for Claude
 
-Connect Claude to the tools available through your Aixy account. Version 0.2.0 prepares a fixed
+Connect Claude to the tools available through your Aixy account. Version 0.2.0 uses a fixed
 remote MCP connection with personal OAuth sign-in and explicit consent in your Aixy dashboard.
 
-**Release pending:** hosted OAuth is deployed. A dedicated review account has completed OAuth,
-public documentation discovery and a read action through MCP Inspector, including denial and
-revocation checks. A complete Claude client connection and tool round-trip remain required before
-merging, tagging, releasing or submitting 0.2.0 to the Claude directory. The stable
+**Verified scope:** hosted OAuth is deployed. A dedicated review account completed one bounded,
+read-only check through Claude chat's remote connector: connection listing, a dashboard connection
+link, on-demand discovery with an input schema, and one approved public documentation search.
+There were no retries or modifying actions. The review authorization was revoked and the client
+disconnected after the test. MCP Inspector separately verified discovery, a read action,
+authorization denial and revocation. Published versions are listed in
+[GitHub Releases](https://github.com/aixy-tech/aixy-claude-plugin/releases). The retained
 [v0.1.0 release](https://github.com/aixy-tech/aixy-claude-plugin/tree/v0.1.0)
 retains the manual personal-token flow for Claude Code.
 
 ## Install
 
-The default branch currently serves the stable release. In Claude Code, run:
+In Claude Code, run:
 
 ```text
 /plugin marketplace add aixy-tech/aixy-claude-plugin
 /plugin install aixy@aixy-plugins
 ```
 
-Follow the [v0.1.0 setup instructions](https://github.com/aixy-tech/aixy-claude-plugin/blob/v0.1.0/plugins/aixy/README.md)
-for that release. These commands will serve 0.2.0 only after its reviewed source is merged and
-the hosted OAuth path has been accepted.
+These commands install from the default branch. The OAuth instructions describe 0.2.0; if you
+use the retained manual-token release, follow its
+[v0.1.0 setup instructions](https://github.com/aixy-tech/aixy-claude-plugin/blob/v0.1.0/plugins/aixy/README.md).
 
-For the proposed OAuth setup, permissions, data handling and revocation, see the
+For OAuth setup, permissions, data handling and revocation, see the
 [plugin README](plugins/aixy/README.md).
 
 ## Claude surfaces
 
 The 0.2.0 package declares the fixed hosted endpoint `https://api.aixy-gateway.com/mcp` and uses
-Claude's native OAuth connection flow. This configuration is intended for Chat, Cowork and Claude
-Code. Package validation and isolated installation are verified; each claimed client experience
-still needs its own verification. Inspector verification does not establish a working Claude,
-Cowork or Claude Code session.
+Claude's native OAuth connection flow. Keep these verification states distinct:
+
+| Surface or check | Verified scope |
+| --- | --- |
+| Claude chat remote connector | One personal OAuth connection and bounded read-only tool round-trip |
+| Claude Code plugin package | Strict validation and disposable installation; live OAuth and tool execution not verified |
+| Cowork | Intended source format; real client connection and tool execution not verified |
+
+The Claude chat check used the remote connector. It did not exercise plugin installation,
+establish a directory listing, or verify live Cowork or Claude Code use.
 The [Claude platform support matrix](https://claude.com/docs/plugins/platform-support) explains
 how remote connectors are connected on each surface.
 
