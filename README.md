@@ -3,9 +3,11 @@
 Connect Claude to the tools available through your Aixy account. Version 0.2.0 prepares a fixed
 remote MCP connection with personal OAuth sign-in and explicit consent in your Aixy dashboard.
 
-**Activation pending:** 0.2.0 is source-ready for review. Hosted OAuth deployment and a successful
-real-account connection are still required before merging, tagging, releasing or submitting it to
-the Claude directory. The stable [v0.1.0 release](https://github.com/aixy-tech/aixy-claude-plugin/tree/v0.1.0)
+**Release pending:** hosted OAuth is deployed. A dedicated review account has completed OAuth,
+public documentation discovery and a read action through MCP Inspector, including denial and
+revocation checks. A complete Claude client connection and tool round-trip remain required before
+merging, tagging, releasing or submitting 0.2.0 to the Claude directory. The stable
+[v0.1.0 release](https://github.com/aixy-tech/aixy-claude-plugin/tree/v0.1.0)
 retains the manual personal-token flow for Claude Code.
 
 ## Install
@@ -28,7 +30,9 @@ For the proposed OAuth setup, permissions, data handling and revocation, see the
 
 The 0.2.0 package declares the fixed hosted endpoint `https://api.aixy-gateway.com/mcp` and uses
 Claude's native OAuth connection flow. This configuration is intended for Chat, Cowork and Claude
-Code. Hosted Aixy OAuth and each claimed client experience still need deployment and verification.
+Code. Package validation and isolated installation are verified; each claimed client experience
+still needs its own verification. Inspector verification does not establish a working Claude,
+Cowork or Claude Code session.
 The [Claude platform support matrix](https://claude.com/docs/plugins/platform-support) explains
 how remote connectors are connected on each surface.
 

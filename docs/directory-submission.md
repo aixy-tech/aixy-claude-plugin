@@ -1,8 +1,11 @@
 # Claude directory release
 
-Version 0.2.0 prepares personal OAuth through the fixed hosted Aixy MCP endpoint. It is source-ready
-for review; hosted OAuth deployment and successful real-account validation remain pending.
-Do not merge, tag, release or submit 0.2.0 until those activation requirements are met.
+Version 0.2.0 prepares personal OAuth through the fixed hosted Aixy MCP endpoint. Hosted OAuth is
+deployed. A dedicated review account has completed public documentation discovery and a read
+action through MCP Inspector, including authorization denial and revocation checks. This finite
+result does not establish Claude client acceptance. Do not merge, tag, release or submit 0.2.0
+until a complete Claude client connection and tool round-trip have been accepted; verify each
+additional client experience the listing will claim.
 
 The Aixy-owned marketplace is independent of Anthropic's curated directory and
 `claude-plugins-official`. A direct install does not establish a directory listing or approval.
@@ -30,11 +33,16 @@ benchmark is needed for this configuration-only package.
 
 1. Verify that the hosted MCP endpoint advertises the intended Aixy OAuth sign-in flow.
 2. Connect a real account from each Claude surface the listing will claim. Confirm the account,
-   organization, callback and optional project restriction shown in consent.
+   organization, callback and optional project restriction shown in consent. Select the intended
+   organization before starting; restart the connection if it changes while consent is open.
 3. Verify safe read-only tool discovery with current account permissions.
 4. Verify denial, expired authorization, renewal and explicit revocation, including a revoked
    connection being rejected by Aixy.
 5. Record the deployed behavior and evidence before merging or creating the 0.2.0 release tag.
+
+The Inspector result verifies one discovery search, one exact schema lookup and one explicitly
+reviewed public documentation read. Package validation and isolated installation are also
+verified. Claude, Cowork and Claude Code client acceptance remain separate from those checks.
 
 After runtime acceptance and review, tag the validated source. In
 [Claude's developer portal](https://claude.ai/directory/manage), choose **Plugin bundle**, enter the
@@ -57,6 +65,27 @@ cover the remote service as well as the configuration-only package:
 - Intended for workplace use. Do not make unsupported age, legal, security or certification claims.
 - Verify the contact address and legal acknowledgements at the point the portal requests them.
 
+## Isolated reviewer workspace
+
+Use a dedicated review account with access only to a review project and its public documentation
+server. The upstream documentation server requires no provider credentials. Allow only its
+read-only search capability; exclude feedback and other write tools. Keep reviewer credentials,
+invitation links and account instructions in the portal's private review fields, outside this
+public repository.
+
+Prepare these examples against that enabled fixture and confirm each in the claimed client:
+
+1. **"Show my available Aixy connections and the dashboard link for the documentation server."**
+   Expected: only permitted connections and the relevant dashboard link; no upstream action.
+2. **"Find the search capability for the enabled Aixy documentation server."**
+   Expected: the permitted action and its current input schema, without executing it.
+3. **"Search those docs for MCP setup guidance."**
+   Expected: a read action using the discovered schema and bounded public documentation results.
+
+Resolve tool names and arguments from current discovery; do not treat tenant-specific action
+names as a universal contract. These review examples do not make all Aixy tools read-only:
+administrators can enable other upstream actions, subject to account permissions and approvals.
+
 ## Remote connector requirement
 
 Anthropic's [directory publishing guide](https://claude.com/docs/directory/publish) asks publishers
@@ -69,9 +98,9 @@ the deployed authorization flow against [Claude's authentication requirements](h
 before acknowledging compliance or submitting. Upstream provider connections remain separate from
 Claude's personal authorization to access Aixy.
 
-The fixed URL is compatible with the remote connector structure used by Chat, Cowork and Claude
-Code. Compatibility of the source format does not establish that the hosted OAuth service is
-active or that any specific client has completed sign-in. See the
+The fixed URL follows the remote connector structure used by Chat, Cowork and Claude Code.
+Compatibility of the source format and Inspector verification do not establish that any specific
+Claude client has completed sign-in and a tool round-trip. See the
 [platform support matrix](https://claude.com/docs/plugins/platform-support).
 
 ## Evidence states
