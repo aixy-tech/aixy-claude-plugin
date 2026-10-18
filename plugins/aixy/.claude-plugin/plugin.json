@@ -1,8 +1,8 @@
 {
   "name": "aixy",
   "displayName": "Aixy",
-  "version": "0.1.0",
-  "description": "Connect Claude Code to your Aixy tools with a personal MCP token.",
+  "version": "0.2.0",
+  "description": "Connect Claude to your Aixy tools with personal OAuth sign-in.",
   "author": {
     "name": "Aixy",
     "email": "hello@aixy-gateway.com",
@@ -15,21 +15,5 @@
   "icon": "./assets/icon.svg",
   "documentationUrl": "https://github.com/aixy-tech/aixy-claude-plugin/blob/main/plugins/aixy/README.md",
   "supportUrl": "https://github.com/aixy-tech/aixy-claude-plugin/issues",
-  "privacyPolicyUrl": "https://aixy-gateway.com/privacy",
-  "userConfig": {
-    "mcp_url": {
-      "type": "string",
-      "title": "Aixy MCP endpoint",
-      "description": "Copy Your MCP endpoint from Agent tools → Connect an agent in your Aixy dashboard. Use your deployment's trusted HTTPS endpoint.",
-      "default": "https://api.aixy-gateway.com/mcp",
-      "required": true
-    },
-    "mcp_token": {
-      "type": "string",
-      "title": "Personal Aixy MCP token",
-      "description": "Create a personal MCP token in Agent tools → Connect an agent and paste only its value. Do not use a model API key or include the Bearer prefix.",
-      "required": true,
-      "sensitive": true
-    }
-  }
+  "privacyPolicyUrl": "https://aixy-gateway.com/privacy"
 }

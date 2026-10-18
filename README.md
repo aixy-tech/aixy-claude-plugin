@@ -1,30 +1,36 @@
-# Aixy for Claude Code
+# Aixy for Claude
 
-Connect Claude Code to the tools available through your Aixy account. The plugin asks for your
-MCP endpoint and personal MCP token, then uses Claude Code's native Streamable HTTP transport.
+Connect Claude to the tools available through your Aixy account. Version 0.2.0 prepares a fixed
+remote MCP connection with personal OAuth sign-in and explicit consent in your Aixy dashboard.
+
+**Activation pending:** 0.2.0 is source-ready for review. Hosted OAuth deployment and a successful
+real-account connection are still required before merging, tagging, releasing or submitting it to
+the Claude directory. The stable [v0.1.0 release](https://github.com/aixy-tech/aixy-claude-plugin/tree/v0.1.0)
+retains the manual personal-token flow for Claude Code.
 
 ## Install
 
-In Claude Code, run:
+The default branch currently serves the stable release. In Claude Code, run:
 
 ```text
 /plugin marketplace add aixy-tech/aixy-claude-plugin
 /plugin install aixy@aixy-plugins
 ```
 
-When Claude asks for configuration, paste the endpoint and personal MCP token from
-**Agent tools → Connect an agent** in your Aixy dashboard. The token field is sensitive and
-uses Claude Code's secure credential storage. Restart Claude Code if prompted.
+Follow the [v0.1.0 setup instructions](https://github.com/aixy-tech/aixy-claude-plugin/blob/v0.1.0/plugins/aixy/README.md)
+for that release. These commands will serve 0.2.0 only after its reviewed source is merged and
+the hosted OAuth path has been accepted.
 
-See the [plugin README](plugins/aixy/README.md) for account setup, permissions, data handling,
-verification and troubleshooting. Use Claude Code 2.1.281 or later.
+For the proposed OAuth setup, permissions, data handling and revocation, see the
+[plugin README](plugins/aixy/README.md).
 
-## Supported clients
+## Claude surfaces
 
-This version supports Claude Code, including the Code tab in Claude Desktop. Chat and Cowork
-do not support this plugin's personal-token configuration flow. The
-[Claude platform support matrix](https://claude.com/docs/plugins/platform-support) describes
-the current differences.
+The 0.2.0 package declares the fixed hosted endpoint `https://api.aixy-gateway.com/mcp` and uses
+Claude's native OAuth connection flow. This configuration is intended for Chat, Cowork and Claude
+Code. Hosted Aixy OAuth and each claimed client experience still need deployment and verification.
+The [Claude platform support matrix](https://claude.com/docs/plugins/platform-support) explains
+how remote connectors are connected on each surface.
 
 ## Maintain and validate
 
