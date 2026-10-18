@@ -7,9 +7,9 @@ with its input schema, and one approved public documentation search. No retry or
 was used. The review authorization was revoked and the client disconnected after the test.
 MCP Inspector separately verified discovery, a read action, denial and revocation.
 This verifies the hosted connector in that Claude chat check. It did not exercise plugin
-installation or live use in Cowork or Claude Code. Review the final validated source and obtain
-explicit maintainer approval before merging, tagging, releasing or submitting. Verify each
-additional client experience before describing it as verified.
+installation or live use in Cowork or Claude Code. Review the final validated source before
+merging, tagging or releasing. Confirm the portal's legal acknowledgements at submission. Verify
+each additional client experience before describing it as verified.
 
 The Aixy-owned marketplace is independent of Anthropic's curated directory and
 `claude-plugins-official`. A direct install does not establish a directory listing or approval.
